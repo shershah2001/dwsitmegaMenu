@@ -26,7 +26,7 @@
 
         .para_bar>p {
             width: 400px;
-            font-size:0.9rem;
+            font-size: 0.9rem;
             line-height: 2rem;
             color: #476788;
         }
@@ -45,8 +45,9 @@
             max-width: 250px;
             min-width: 500px;
         }
-        .image img{
-            width:100%;
+
+        .image img {
+            width: 100%;
         }
 
         .activeBar {
@@ -72,19 +73,22 @@
         .Img {
             display: none;
         }
-        .heading h3{
+
+        .heading h3 {
             font-size: 1.25rem;
             line-height: 1.4;
             text-align: left;
             color: rgb(166, 187, 209);
             font-weight: 600;
         }
+
         .logo_heading {
             display: flex;
             align-items: center;
-            column-gap:1rem;
+            column-gap: 1rem;
             cursor: pointer;
         }
+
         @keyframes grow {
             0% {
                 transform: scaleX(0);
@@ -96,26 +100,48 @@
         }
 
 
+
+
         @media(max-width:999px) {
             .images {
                 display: none;
             }
 
+            .flex {
+                justify-content: center;
+            }
+
             .Img {
                 display: block;
-                max-width:400px;
+                max-width: 400px;
                 min-width: 200px;
             }
-            .Img img{
+
+            .Img img {
                 width: 100%;
+                margin-left:-2rem;
             }
-            /* .image.activeBar {
-                display: none;
-            } */
-             
+
         }
-     
-        
+
+        @media(max-width:640px) {
+            .flex {
+                justify-content: center;
+            }
+
+            .heading h3 {
+                font-size: 1rem;
+            }
+
+            .para_bar>p {
+                width: 250px;
+                font-size: 0.8rem;
+            }
+
+            .progress_bar_one {
+                width: 250px;
+            }
+        }
     </style>
 </head>
 
@@ -130,7 +156,7 @@
                                 <div class="form_logo">
                                     <div class="sc-16037422-0 kVa-dwP">
                                         <div class="caldender">
-                                            <i class="fa-regular fa-calendar" ></i>
+                                            <i class="fa-regular fa-calendar"></i>
                                         </div>
                                         <div class="calender_dark">
                                             <i class="fa-solid fa-calendar"></i>
@@ -266,7 +292,7 @@
                                         <div class="caldender">
                                             <i class="fa-light fa-share"></i>
                                         </div>
-                                        <div class="calender_dark">  
+                                        <div class="calender_dark">
                                             <i class="fa-solid fa-share"></i>
                                         </div>
                                     </div>
@@ -332,30 +358,30 @@
             const Image = document.querySelectorAll(".image");
             const icons = document.querySelectorAll(".kVa-dwP");
             const formHeading = document.querySelectorAll(".form_heading");
-            
-            
+
+
             let currentIndex = 0; // Start with the first para_bar
             let manualClick = false;
-            
+
             // Function to show the current para_bar and hide the rest
-            
+
             function showParaBar(index) {
                 // Hide all paraBars
-                
+
                 paraBars.forEach((paraBar, idx) => {
                     if (idx === index) {
                         paraBar.classList.add('activeBar'); // Show current
-                       if(paraBar.classList.contains('activeBar')){
-                         icons.forEach((item,i)=>{
-                            if(i===index){
-                                item.children[0].children[0].style.display="none";
-                                item.children[1].children[0].style.display='block';
-                            }else{
-                                item.children[0].children[0].style.display="block";
-                                item.children[1].children[0].style.display='none';
-                            }
-                         })
-                       }
+                        if (paraBar.classList.contains('activeBar')) {
+                            icons.forEach((item, i) => {
+                                if (i === index) {
+                                    item.children[0].children[0].style.display = "none";
+                                    item.children[1].children[0].style.display = 'block';
+                                } else {
+                                    item.children[0].children[0].style.display = "block";
+                                    item.children[1].children[0].style.display = 'none';
+                                }
+                            })
+                        }
                     } else {
                         paraBar.classList.remove('activeBar'); // Hide others
                     }
@@ -368,39 +394,39 @@
                         img.classList.remove('activeBar');
                     }
                 })
-               
+
 
                 // Add an event listener to detect when the progress bar animation ends
                 const progressBar = progressBars[index];
                 console.log("progressBar==>", progressBar)
-                
+
                 progressBar.addEventListener('animationend', function () {
                     // Move to the next para_bar (loop back to the first one if it's the last)
-                    if(!manualClick){
+                    if (!manualClick) {
                         currentIndex = (currentIndex + 1) % paraBars.length;
-                        showParaBar(currentIndex); 
+                        showParaBar(currentIndex);
                     }
-                    
+
                 }, { once: true }); // The event listener should only trigger once per animation
             }
             formHeading.forEach((heading, index) => {
                 heading.addEventListener('click', function () {
-                manualClick = true; // Set manualClick to true to stop auto progression
-                currentIndex = index; // Set current index to the clicked heading
-                showParaBar(currentIndex); // Show the clicked para_bar
+                    manualClick = true; // Set manualClick to true to stop auto progression
+                    currentIndex = index; // Set current index to the clicked heading
+                    showParaBar(currentIndex); // Show the clicked para_bar
 
-                // Restart automatic behavior after the clicked para_bar finishes its progress
-                const progressBar = progressBars[currentIndex];
-                progressBar.addEventListener('animationend', function () {
-                    manualClick = false; // Set manualClick to false, allowing auto progression to resume
-                    currentIndex = (currentIndex + 1) % paraBars.length; // Move to the next para_bar
-                    showParaBar(currentIndex); // Show the next para_bar
-                }, { once: true });
+                    // Restart automatic behavior after the clicked para_bar finishes its progress
+                    const progressBar = progressBars[currentIndex];
+                    progressBar.addEventListener('animationend', function () {
+                        manualClick = false; // Set manualClick to false, allowing auto progression to resume
+                        currentIndex = (currentIndex + 1) % paraBars.length; // Move to the next para_bar
+                        showParaBar(currentIndex); // Show the next para_bar
+                    }, { once: true });
+                });
             });
-        });
 
-        // Start the loop by showing the first para_bar
-        showParaBar(currentIndex);
+            // Start the loop by showing the first para_bar
+            showParaBar(currentIndex);
         });
     </script>
 
@@ -408,6 +434,3 @@
 </body>
 
 </html>
-
-
-
