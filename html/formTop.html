@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+    <title>Slider</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        html,
+        body {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .para_bar>p {
+            width: 400px;
+            font-size: 0.9rem;
+            line-height: 2rem;
+            color: #476788;
+        }
+
+        .para_bar_one,
+        .para_bar_two,
+        .para_bar_three,
+        .para_bar_four,
+        .para_bar_five,
+        .para_bar_six {
+            display: none;
+        }
+
+        .image {
+            display: none;
+            max-width: 250px;
+            min-width: 500px;
+        }
+
+        .image img {
+            width: 100%;
+        }
+
+        .activeBar {
+            display: block !important;
+        }
+
+        .progress_bar_one {
+            width: 400px;
+            height: 1px;
+            border: 1px solid rgb(212, 224, 237);
+            border-radius: 10px;
+            background-color: rgb(212, 224, 237);
+        }
+
+        .line {
+            width: inherit;
+            height: inherit;
+            background-color: #8247F5;
+            transform-origin: left;
+            animation: grow 10s forwards;
+        }
+
+        .Img {
+            display: block;
+            max-width: 400px;
+            min-width: 200px;
+        }
+
+        .Img img {
+            width: 100%;
+        }
+
+        .heading h3 {
+            font-size: 1rem;
+            line-height: 1.4;
+            text-align: left;
+            color: rgb(166, 187, 209);
+            font-weight: 600;
+        }
+
+        .logo_heading {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            cursor: pointer;
+        }
+
+        .form_heading {
+            width: 10rem;
+        }
+
+        .form_heading h3 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes grow {
+            0% {
+                transform: scaleX(0);
+            }
+
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+
+        @media(max-width:999px) {
+
+            .Img {
+                display: block;
+                max-width: 400px;
+                min-width: 200px;
+            }
+
+            .Img img {
+                width: 100%;
+            }
+
+            /* .image.activeBar {
+                display: none;
+            } */
+
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, max-content);
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="flex">
+                <!-- image start here -->
+
+                <div col-xs-12 col-sm-12 col-lg-12 col-md-12>
+                    <div class="grid">
+                        <div class="text_progressBar">
+                            <div class="heading">
+                                <div class="logo_heading">
+                                    <div class="form_logo">
+                                        <div class="sc-16037422-0 kVa-dwP">
+                                            <div class="caldender">
+                                                <i class="fa-regular fa-calendar"></i>
+                                            </div>
+                                            <div class="calender_dark">
+                                                <i class="fa-solid fa-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_heading">
+                                        <h3>Connect your calendars</h3>
+                                        <div class="progress_bar_one">
+                                            <div class="line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="para_bar para_bar_one">
+                                <p>
+                                    Calendly connects up to six calendars to automate scheduling with real-time
+                                    availability.
+                                </p>
+                                <div class="Img">
+                                    <img width="250"
+                                        src="https://marketing-assets.calendly.com/media/experimentImages/homepage-assets/Accordions/calendly-makes-scheduling-simple/connect-your-calendars.png"
+                                        alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text_progressBar">
+                            <div class="heading">
+                                <div class="logo_heading">
+                                    <div class="form_logo">
+                                        <div class="sc-16037422-0 kVa-dwP">
+                                            <div class="caldender">
+                                                <i class="fa-regular fa-address-card"></i>
+                                            </div>
+                                            <div class="calender_dark">
+                                                <i class="fa-solid fa-address-card"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_heading">
+                                        <h3>Add your availability</h3>
+                                        <div class="progress_bar_one progress_bar_two">
+                                            <div class="line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="para_bar para_bar_two">
+                                <p>
+                                    Keep invitees informed of your availability. Take control of your calendar with
+                                    detailed
+                                    availability settings, scheduling rules, buffers, and more.
+                                </p>
+                                <div class="Img">
+                                    <img width="250"
+                                        src="https://marketing-assets.calendly.com/media/experimentImages/homepage-assets/Accordions/calendly-makes-scheduling-simple/add-your-availability.png"
+                                        alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text_progressBar">
+                            <div class="heading">
+                                <div class="logo_heading">
+                                    <div class="form_logo">
+                                        <div class="sc-16037422-0 kVa-dwP">
+                                            <div class="caldender">
+                                                <i class="fa-light fa-camera-web"></i>
+                                            </div>
+                                            <div class="calender_dark">
+                                                <i class="fa-solid fa-camera-web"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_heading">
+                                        <h3>Connect conferencing tools</h3>
+                                        <div class="progress_bar_one progress_bar_three">
+                                            <div class="line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="para_bar para_bar_three">
+                                <p>Sync your video conferencing tools and set preferences for in-person meetings or
+                                    calls.
+                                </p>
+                                <div class="Img">
+                                    <img width="250"
+                                        src="https://marketing-assets.calendly.com/media/experimentImages/homepage-assets/Accordions/calendly-makes-scheduling-simple/connect-conferencing-tools.png"
+                                        alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text_progressBar">
+                            <div class="heading">
+                                <div class="logo_heading">
+                                    <div class="form_logo">
+                                        <div class="sc-16037422-0 kVa-dwP">
+                                            <div class="caldender">
+                                                <i class="fa-light fa-typewriter"></i>
+                                            </div>
+                                            <div class="calender_dark">
+                                                <i class="fa-solid fa-typewriter"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_heading">
+                                        <h3>Customize your event types</h3>
+                                        <div class="progress_bar_one progress_bar_four">
+                                            <div class="line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="para_bar para_bar_four">
+                                <p>
+                                    Choose from pre-built templates or quickly create custom event types for any meeting
+                                    you
+                                    need to schedule.
+                                </p>
+                                <div class="Img">
+                                    <img width="250"
+                                        src="https://marketing-assets.calendly.com/media/experimentImages/homepage-assets/Accordions/calendly-makes-scheduling-simple/customize-event-types.png"
+                                        alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text_progressBar">
+                            <div class="heading">
+                                <div class="logo_heading">
+                                    <div class="form_logo">
+                                        <div class="sc-16037422-0 kVa-dwP">
+                                            <div class="caldender">
+                                                <i class="fa-light fa-share"></i>
+                                            </div>
+                                            <div class="calender_dark">
+                                                <i class="fa-solid fa-share"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form_heading">
+                                        <h3>Share your scheduling link</h3>
+                                        <div class="progress_bar_one progress_bar_five">
+                                            <div class="line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="para_bar para_bar_five">
+                                <p>Easily book meetings by embedding scheduling links on your website, landing pages, or
+                                    emails.</p>
+                                <div class="Img">
+                                    <img width="250"
+                                        src="https://marketing-assets.calendly.com/media/experimentImages/homepage-assets/Accordions/calendly-makes-scheduling-simple/share-scheduling-link.png"
+                                        alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const paraBars = document.querySelectorAll('.para_bar'); // Get all para_bar divs
+            const progressBars = document.querySelectorAll('.line'); // Get all progress bar lines
+            // const Image = document.querySelectorAll(".image");
+            const icons = document.querySelectorAll(".kVa-dwP");
+            const formHeading = document.querySelectorAll(".form_heading");
+
+
+            let currentIndex = 0; // Start with the first para_bar
+            let manualClick = false;
+
+            // Function to show the current para_bar and hide the rest
+
+            function showParaBar(index) {
+                // Hide all paraBars
+
+                paraBars.forEach((paraBar, idx) => {
+                    if (idx === index) {
+                        paraBar.classList.add('activeBar'); // Show current
+                        if (paraBar.classList.contains('activeBar')) {
+                            icons.forEach((item, i) => {
+                                if (i === index) {
+                                    item.children[0].children[0].style.display = "none";
+                                    item.children[1].children[0].style.display = 'block';
+                                } else {
+                                    item.children[0].children[0].style.display = "block";
+                                    item.children[1].children[0].style.display = 'none';
+                                }
+                            })
+                        }
+                    } else {
+                        paraBar.classList.remove('activeBar'); // Hide others
+                    }
+                });
+
+                // Image.forEach((img, i) => {
+                //     if (i === index) {
+                //         img.classList.add('activeBar');
+                //     } else {
+                //         img.classList.remove('activeBar');
+                //     }
+                // })
+
+
+                // Add an event listener to detect when the progress bar animation ends
+                const progressBar = progressBars[index];
+                console.log("progressBar==>", progressBar)
+
+                progressBar.addEventListener('animationend', function () {
+                    // Move to the next para_bar (loop back to the first one if it's the last)
+                    if (!manualClick) {
+                        currentIndex = (currentIndex + 1) % paraBars.length;
+                        showParaBar(currentIndex);
+                    }
+
+                }, { once: true }); // The event listener should only trigger once per animation
+            }
+            formHeading.forEach((heading, index) => {
+                heading.addEventListener('click', function () {
+                    manualClick = true; // Set manualClick to true to stop auto progression
+                    currentIndex = index; // Set current index to the clicked heading
+                    showParaBar(currentIndex); // Show the clicked para_bar
+
+                    // Restart automatic behavior after the clicked para_bar finishes its progress
+                    const progressBar = progressBars[currentIndex];
+                    progressBar.addEventListener('animationend', function () {
+                        manualClick = false; // Set manualClick to false, allowing auto progression to resume
+                        currentIndex = (currentIndex + 1) % paraBars.length; // Move to the next para_bar
+                        showParaBar(currentIndex); // Show the next para_bar
+                    }, { once: true });
+                });
+            });
+
+            // Start the loop by showing the first para_bar
+            showParaBar(currentIndex);
+        });
+    </script>
+
+
+</body>
+
+</html>
